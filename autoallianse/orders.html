@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- jQuery Chosen styles -->
+    <link rel="stylesheet" href="css/chosen.min.css">
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="header">
+      <nav class="navbar">
+        <div
+          class="header__container-unauthorized container-fluid d-flex justify-content-center container-fluid"
+        >
+          <div
+            class="row w-100 d-flex justify-content-center align-items-center"
+          >
+            <div
+              class="col-xl-1 col-lg-1 col-sm-4 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-1 col-12 d-flex justify-content-sm-start justify-content-center align-items-center"
+            >
+              <div class="header__logo-container">
+                <a href="index.html">
+                  <img src="img/logo/logo.png" alt="Logo" />
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-5 col-lg-5 col-sm-12 order-4 order-sm-4 order-md-4 order-lg-2 order-xl-2 col-12 d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="main__search-container d-flex flex-column align-items-center w-100"
+              >
+                <div class="search__main w-100 d-flex justify-content-center">
+                  <input
+                    class="main__search form-control w-100"
+                    placeholder="Введите артикул..."
+                    type="search"
+                    name="Search"
+                    id="mainSearch"
+                  />
+                  <div class="search-icons">
+                    <i
+                      class="bi bi-caret-down-fill"
+                      id="searchDropdownButton"
+                    ></i>
+                    <i class="bi bi-search" id="searchButton"></i>
+                  </div>
+                </div>
+
+                <div class="search__results-container">
+                  <div class="search__results" id="resultsDiv">
+                    <div class="form-check w-100">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="searchAnalogsCheckbox"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="searchAnalogsCheckbox"
+                      >
+                        Искать аналоги
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xl-4 col-lg-4 col-sm-12 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3 col-12 d-flex align-items-center justify-content-center justify-content-sm-start bg-grey-light m-0 px-4 header__cart-col"
+            >
+              <a href="cart.html" class="text-decoration-none">
+                <div class="cart cart-container">
+                  <div class="cart__icon">
+                    <i class="bi bi-cart3"></i>
+                    <div class="cart__items-amount">22</div>
+                  </div>
+                  <div class="cart-text">
+                    <h2>В корзине</h2>
+                    <h3>0 товаров на 0,00</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div
+              class="col-xl-2 col-lg-2 col-sm-8 order-2 order-sm-2 order-md-2 order-lg-4 order-xl-4 d-flex justify-content-center justify-content-sm-end align-items-center my-0 my-sm-3 bg-grey-light px-4 header__login-reg-col"
+            >
+              <a
+                class="btn btn-default navbar-btn registration-button"
+                href="cabinet/registration.html"
+                >Регистрация</a
+              >
+              <button
+                class="btn navbar-btn login-button bg-grey"
+                style="margin-right: 0"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Войти
+              </button>
+            </div>
+
+            <!-- Login modal -->
+            <div
+              class="modal fade"
+              id="loginModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">
+                      Авторизация
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body py-4">
+                    <form action="">
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Введите логин"
+                        name="Login"
+                        id="loginInput"
+                      />
+                      <div class="input-group flex-nowrap my-3">
+                        <input
+                          class="form-control password-input"
+                          type="password"
+                          placeholder="Введите пароль"
+                          name="Password"
+                          aria-label="Password"
+                          aria-describedby="eye"
+                        />
+                        <span class="input-group-text bi bi-eye eye"></span>
+                      </div>
+
+                      <a href="#">Забыли пароль?/Сменить пароль?</a>
+
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Войти
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary bg-grey modal-button"
+                      >
+                        Регистрация
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / Login modal -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main orders">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-12">
+                    <h1>Заказы</h1>
+                </div>
+
+                <div class="orders__filters-container">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-12">
+                            <div class="row">
+                                <div class="col-12" style="margin: 0 0 20px 0;">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 mb-lg-0 mb-2">
+                                            <input class="form-control" type="text" name="articule"
+                                                id="ordersArticuleInput" placeholder="Артикул">
+                                        </div>
+                                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 mb-lg-0 mb-2">
+                                            <input class="form-control" type="text" name="brand" id="ordersBrandInput"
+                                                placeholder="Бренд">
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                            <select class="select w-100" name="status" id="ordersStatusSelect" multiple data-placeholder=" -- Выберите статус -- ">
+                                                <option value="52">Вход в порт прибытия</option>
+                                                <option value="53">Вход на таможенный терминал</option>
+                                                <option value="190">Выдача невозможна</option>
+                                                <option value="51">Выход из порта отправителя</option>
+                                                <option value="54">Выход по маршруту</option>
+                                                <option value="55">Выход с таможенного терминала</option>
+                                                <option value="140">Готово к выдаче</option>
+                                                <option value="80">Задержка</option>
+                                                <option value="15">Заказ невозможен</option>
+                                                <option value="40">Заказ принят</option>
+                                                <option value="10">Заказ проверен</option>
+                                                <option value="100">Изменение цены</option>
+                                                <option value="57">На транзитном складе № 1</option>
+                                                <option value="58">На транзитном складе № 2</option>
+                                                <option value="240">Новый заказ</option>
+                                                <option value="200">Отказ клиента</option>
+                                                <option value="50">Отправлен поставщику</option>
+                                                <option value="90">Переход номера</option>
+                                                <option value="160">Получен клиентом</option>
+                                                <option value="180">Поставка невозможна</option>
+                                                <option value="120">Поступил на склад</option>
+                                                <option value="56">Поступление на наш склад</option>
+                                            </select>
+                                            <span>Быстрый статус:</span>
+                                            <a href="#">получен клиентом</a>
+                                            <a href="#">поставка невозможна</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="col-12" style="margin: 0 0 20px 0;">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-lg-0 mb-2">
+                                                <input class="form-control" type="text" name="orderNumber"
+                                                    id="orderNumberInput" placeholder="№ заказа">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-lg-0 mb-2">
+                                                <input class="form-control" type="text" name="clientOrderNumber"
+                                                    id="clientOrderNumberInput" placeholder="Клиентский № заказа">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div>
+                                                <h3>Период создания заказа</h3>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-sm-0 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text h-100"
+                                                                    id="ordersOrderCreationMinDateInputPrepend">с</span>
+                                                            </div>
+                                                            <input class="form-control" type="date"
+                                                                name="ordersOrderCreationMinDate"
+                                                                id="ordersOrderCreationMinDateInput"
+                                                                aria-label="ordersOrderCreationMinDate"
+                                                                aria-describedby="ordersOrderCreationMinDateInput">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text h-100"
+                                                                    id="ordersOrderCreationMaxDateInputPrepend">по</span>
+                                                            </div>
+                                                            <input class="form-control" type="date"
+                                                                name="ordersOrderCreationMaxDate"
+                                                                id="ordersOrderCreationMaxDateInput">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a href="#">неделя</a>
+                                                    <a href="#">месяц</a>
+                                                    <a href="#">квартал</a>
+                                                    <a href="#">год</a>
+                                                    <span>- от текущей даты</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12 mt-md-0 mt-2">
+                                            <div>
+                                                <h3>Период ожидаемой даты поставки</h3>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-sm-0 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text h-100"
+                                                                    id="ordersOrderDelvieryMinDateInputPrepend">с</span>
+                                                            </div>
+                                                            <input class="form-control" type="date"
+                                                                name="ordersOrderDeliveryMinDate"
+                                                                id="ordersOrderDeliveryMinDateInput">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text h-100"
+                                                                    id="ordersOrderDelveryMaxDateInputPrepend">по</span>
+                                                            </div>
+                                                            <input class="form-control" type="date"
+                                                                name="ordersOrderDeliveryMaxDate"
+                                                                id="ordersOrderDeliveryMaxDateInput">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <a href="#">неделя</a>
+                                                <a href="#">месяц</a>
+                                                <a href="#">квартал</a>
+                                                <a href="#">год</a>
+                                                <span>- от текущей даты</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-lg-2 col-md-12 d-flex justify-content-center p-0 orders__filters-container__buttons-container">
+                            <div class="row d-flex flex-row flex-wrap align-content-between w-100">
+                                <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 my-md-0 my-3">
+                                    <button class="btn excel-export">
+                                        Выгрузить в Excel
+                                        <img class="excel-icon" src="img/icons/excel.svg" alt="Excel icon"
+                                            style="width: 20px; height: 20px">
+                                    </button>
+                                    <span class="d-block text-center">макс. 20 000 строк</span>
+                                </div>
+                                <div
+                                    class="col-lg-12 col-md-6 col-sm-6 col-xs-12 d-flex flex-column justify-content-center filter-button-container">
+                                    <button class="btn orders__filter-button w-100">Фильтровать</button>
+                                    <a href="#" class="d-block text-center">Сбросить фильтр</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orders__table-container mt-3">
+                    <div class="orders__table-header">
+                        <div class="row pb-3" style="border-bottom: 2px solid #ddd">
+                            <div class="col-4"><b>Деталь</b></div>
+                            <div class="col-1"><b>Откуда</b></div>
+                            <div class="col-1"><b>Дата</b></div>
+                            <div class="col-1"><b>Цена ($)</b></div>
+                            <div class="col-1"><b>Кол-во</b></div>
+                            <div class="col-1"><b>Сумма ($)</b></div>
+                            <div class="col-1"><b>Статус</b></div>
+                            <div class="col-2" style="text-align: right"><b>Комментарий</b></div>
+                        </div>
+                    </div>
+
+                    <div class="orders__order">
+                        <div class="order__header">
+                            <div class="row pt-3">
+                                <div class="col-md-6 col-12
+                                d-flex justify-content-lg-start justify-content-end m-0">
+                                    <a class="order__a" href="#">#2632</a>
+                                    <p class="order__date mx-4">25 августа 2021 11:35:15</p>
+                                    <p class="order__price">47.00 $</p>
+                                </div>
+                                <div class="col-md-6 col-12
+                                d-flex align-items-lg-start 
+                                align-items-center justify-content-end">
+                                    Комментарий к заказу
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orders__order">
+                        <div class="order__header">
+                            <div class="row pt-3">
+                                <div class="col-md-6 col-12
+                                d-flex justify-content-lg-start justify-content-end m-0">
+                                    <a class="order__a" href="#">#1226</a>
+                                    <p class="order__date mx-4">22 декабря 2020 12:13:08</p>
+                                    <p class="order__price">47.00 $</p>
+                                </div>
+                                <div class="col-md-6 col-12
+                                d-flex align-items-lg-start 
+                                align-items-center justify-content-end">
+                                    Комментарий к заказу
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+
+                        <div class="order__item">
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <span class="order__item-brand">PEUGEOT/CITROEN</span>
+                                    <span class="order__item-number">425270</span>
+                                    <div class="order__item-name">Колодки тормозн (ком)</div>
+                                </div>
+                                <div class="col-md-1 col-12">Под заказ</div>
+                                <div
+                                    class="col-md-1 col-12 d-md-block d-flex justify-content-lg-center justify-content-start">
+                                    -</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">1</div>
+                                <div class="col-md-1 col-12">47.00</div>
+                                <div class="col-md-1 col-12">Новый заказ</div>
+                                <div class="col-md-2 col-12 d-flex justify-content-lg-end justify-content-start">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row orders__pagination m-0 mt-3">
+                    <div class="col-12 p-0 d-flex justify-content-between">
+                        <div class="d-flex">
+                            <a href="#" style="border: 1px solid grey">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">...</a>
+                            <a href="#">182</a>
+                        </div>
+                        <div class="d-flex">
+                            <span>Показывать по</span>
+                            <a href="#">20</a>
+                            <a href="#">50</a>
+                            <a href="#">100</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container-fluid bg-lighter">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <div class="footer__left">
+                    <a href="orders.html">Заказы</a>
+                    <a href="about.html">О компании</a>
+                    <a href="help.html">Помощь</a>
+                </div>
+
+                <div class="footer__right">
+                    <i class="bi bi-map"></i>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery 3.6.0 minified -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Script for password eye -->
+    <script src="js/showPasswordEye.js"></script>
+
+    <!-- Script for dropdown input -->
+    <script src="js/dropdown.js"></script>
+
+    <!-- Script for cart counter -->
+    <script src="js/cart_counter.js"></script>
+
+    <!-- jQuery Chosen -->
+    <script src="js/chosen.jquery.min.js"></script>
+
+    <!-- jQuery Chosen init -->
+    <script>
+        $("#ordersStatusSelect").chosen();
+    </script>
+
+</body>
+
+</html>
